@@ -22,7 +22,7 @@ class StatisticController extends Controller
 
         return view("dashboard", [
             "current_user" => User::select("id", "name", "email", "access_level")->find(Auth::id())->toArray(),
-            "users" => $users ?? "",
+            "users" => $users ?? [],
         ]);
     }
 }
